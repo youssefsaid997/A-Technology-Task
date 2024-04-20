@@ -1,0 +1,32 @@
+<app-card
+  [inputStyle]="
+    ' border-blue-500 w-full border-2 border-dashed p-4 rounded-md flex flex-col justify-center bg-blue-50'
+  "
+  [bgColor]="bgColor"
+>
+  <div class="flex justify-start items-center gap-8 w-auto" #info>
+    <div class="icon">
+      <i
+        [class]="icon"
+        style="color: rgb(113, 113, 221); font-size: 1.6rem"
+      ></i>
+    </div>
+    <div class="card-info">
+      <h3 class="font-sans font-semibold text-2xl text-black">Hello</h3>
+      <p class="font-sans text-gray-500 text-lg w-fit">
+        Lorem ipsum dolor sit amet.
+      </p>
+    </div>
+  </div>
+  <div class="flex justify-center items-center my-2 w-auto relative" #input>
+    <input
+      type="text"
+      class="w-full outline-none focus:text-blue-500 border border-blue-500 rounded-md p-1 text-lg font-sans font-normal bg-gray-50 text-center text-gray-500 placeholder:text-blue-500 placeholder:text-sm"
+      placeholder="Search for user by username or phone number"
+    />
+    <i
+      class="pi pi-search absolute end-4"
+      style="font-size: 1.4rem; color: rgb(59, 130, 246)"
+    ></i>
+  </div>
+</app-card>

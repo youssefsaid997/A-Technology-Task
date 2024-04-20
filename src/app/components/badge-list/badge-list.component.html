@@ -1,0 +1,14 @@
+<p-card header="Title" styleClass="border-none shadow-none">
+  <div class="flex gap-4 bg-white border py-5 px-1 rounded-md items-center">
+    <ng-container *ngFor="let badge of badgeList; index as i">
+      <p-chip
+        [label]="badge.label"
+        [styleClass]="badge.style"
+        *ngIf="i < 3"
+      ></p-chip>
+      <p-chip *ngIf="i === 2" [label]="badgeList.length - i - 1 + '+'"></p-chip>
+    </ng-container>
+    <h2 class="font-bold text-2xl text-gray-400 font-sans">|</h2>
+    <h2 class="font-normal text-lg text-gray-400">new page</h2>
+  </div>
+</p-card>

@@ -1,0 +1,29 @@
+<h2 class="text-gray-600 text-xl font-medium">{{ card.title }}</h2>
+<div class="bg-white p-4 my-1 border rounded-md min-w-96">
+  <div class="flex items-center justify-between w-full min-h-16">
+    <div class="flex items-center gap-3">
+      <p-avatar
+        *ngIf="key === 0"
+        [image]="card.img"
+        size="xlarge"
+        shape="circle"
+      ></p-avatar>
+      <p-avatar
+        *ngIf="key !== 0"
+        [icon]="card.icon"
+        size="large"
+        shape="circle"
+        [style]="{ 'font-size': '3rem' }"
+      ></p-avatar>
+      <h2 class="text-2xl font-medium font-mono">{{ card.label }}</h2>
+    </div>
+
+    <p-avatar
+      *ngIf="key === 0"
+      [icon]="card.icon"
+      size="large"
+      shape="circle"
+      [style]="{ 'font-size': '3rem' }"
+    ></p-avatar>
+  </div>
+</div>

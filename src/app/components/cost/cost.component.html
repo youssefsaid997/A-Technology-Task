@@ -1,0 +1,25 @@
+<app-card
+  [inputStyle]="'bg-white border-2 p-4 rounded-md flex flex-col justify-center'"
+>
+  <div class="flex justify-start items-center gap-8 w-auto" #info>
+    <div class="icon">
+      <i
+        [class]="icon"
+        style="color: rgb(113, 113, 221); font-size: 1.6rem"
+      ></i>
+    </div>
+    <div class="card-info">
+      <h3 class="font-sans font-semibold text-2xl text-black">Hello</h3>
+      <p class="font-sans text-gray-500 text-lg w-fit">
+        Lorem ipsum dolor sit amet.
+      </p>
+    </div>
+  </div>
+  <div class="flex justify-center items-center my-2 w-auto" #input>
+    <input
+      type="text"
+      class="w-full outline-none border-2 border-gray-400 rounded-md p-1 text-2xl font-sans font-semibold bg-gray-50 text-center text-gray-500 placeholder:text-gray-500 placeholder:text-2xl"
+      placeholder="$50,000"
+    />
+  </div>
+</app-card>

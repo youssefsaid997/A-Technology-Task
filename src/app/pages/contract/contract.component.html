@@ -1,0 +1,21 @@
+<div class="w-full mx-auto flex flex-col justify-center bg-gray-50">
+  <section class="flex flex-wrap justify-evenly my-3 mx-5 gap-1">
+    <app-client [icon]="'pi pi-users'" [bgColor]="' bg-blue-50'"></app-client>
+    <app-cost [icon]="'pi pi-wallet'"></app-cost>
+  </section>
+  <section class="my-3">
+    <app-slider></app-slider>
+  </section>
+
+  <section class="my-3 mx-5 border rounded-md">
+    <app-badge-list></app-badge-list>
+  </section>
+
+  <section class="flex flex-wrap justify-between mx-5 my-3">
+    <app-float-card
+      *ngFor="let float of floatCards; index as i"
+      [card]="float"
+      [key]="i"
+    ></app-float-card>
+  </section>
+</div>
