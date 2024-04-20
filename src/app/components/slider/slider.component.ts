@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-slider',
@@ -7,6 +8,8 @@ import { Component, HostListener } from '@angular/core';
 })
 export class SliderComponent {
   percentages = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  sliderValue: number = 0;
+  @Input() controller!: FormControl;
 
   public getScreenWidth: any;
   public getScreenHeight: any;
@@ -14,6 +17,7 @@ export class SliderComponent {
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
+    console.log(this.sliderValue);
   }
 
   @HostListener('window:resize', ['$event'])

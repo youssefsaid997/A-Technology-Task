@@ -1,21 +1,65 @@
-<div class="w-full mx-auto flex flex-col justify-center bg-gray-50">
-  <section class="flex flex-wrap justify-evenly my-3 mx-5 gap-1">
-    <app-client [icon]="'pi pi-users'" [bgColor]="' bg-blue-50'"></app-client>
-    <app-cost [icon]="'pi pi-wallet'"></app-cost>
+<form action="" [formGroup]="contractForm" (submit)="onSubmit()">
+  <section
+    class="p-3 bg-white border rounded-t-md flex justify-between items-center"
+  >
+    <h3 class="text-2xl font-bold text-black font-sans mx-5">
+      Creating new Contract
+    </h3>
+    <i
+      class="pi pi-times text-lg bg-gray-200 p-2 rounded-md text-black font-bold mx-5"
+    ></i>
   </section>
-  <section class="my-3">
-    <app-slider></app-slider>
-  </section>
+  <div class="w-full mx-auto flex flex-col justify-center bg-gray-50">
+    <section class="flex flex-wrap justify-evenly my-3 mx-5 gap-1">
+      <app-client
+        [controller]="contractForm.controls.user"
+        [icon]="'pi pi-users'"
+      ></app-client>
+      <app-cost
+        [controller]="contractForm.controls.price"
+        [icon]="'pi pi-wallet'"
+      ></app-cost>
+    </section>
+    <section class="my-3">
+      <app-slider [controller]="contractForm.controls.successRate"></app-slider>
+    </section>
 
-  <section class="my-3 mx-5 border rounded-md">
-    <app-badge-list></app-badge-list>
-  </section>
+    <section class="my-3 mx-5 border rounded-md">
+      <app-badge-list></app-badge-list>
+    </section>
 
-  <section class="flex flex-wrap justify-between mx-5 my-3">
-    <app-float-card
-      *ngFor="let float of floatCards; index as i"
-      [card]="float"
-      [key]="i"
-    ></app-float-card>
+    <section class="flex flex-wrap justify-between mx-5 my-3">
+      <app-float-card
+        *ngFor="let float of floatCards; index as i"
+        [card]="float"
+        [key]="i"
+      ></app-float-card>
+    </section>
+  </div>
+  <section
+    class="p-3 space-x-2 bg-white border rounded-br-md rounded-bl-md flex justify-between items-center"
+  >
+    <div class="flex gap-1 mx-2">
+      <button
+        class="bg-blue-700 py-2 px-4 hover:bg-blue-800 focus:bg-blue-800 text-white text-lg font-medium rounded-l-md"
+      >
+        <i class="pi pi-angle-down"></i>
+      </button>
+      <button
+        class="bg-blue-700 py-2 px-4 hover:bg-blue-800 focus:bg-blue-800 text-white text-lg font-medium rounded-r-md"
+        type="submit"
+      >
+        Add Contract
+      </button>
+    </div>
+
+    <button
+      disabled="true"
+      class="bg-gray-50 py-2 px-4 text-gray-400 text-lg font-medium border rounded-md flex justify-between items-center gap-2 mx-5"
+      type="submit"
+    >
+      <span>Contract</span>
+      <i class="pi pi-pen-to-square"></i>
+    </button>
   </section>
-</div>
+</form>

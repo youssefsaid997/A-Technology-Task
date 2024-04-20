@@ -18,6 +18,8 @@ import { ChipModule } from 'primeng/chip';
 import { CardModule } from 'primeng/card';
 import { FileUploadModule } from 'primeng/fileupload';
 import { AvatarModule } from 'primeng/avatar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,10 @@ import { AvatarModule } from 'primeng/avatar';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectModule,
+    FormsModule,
     ChipModule,
     CardModule,
     AvatarModule,
